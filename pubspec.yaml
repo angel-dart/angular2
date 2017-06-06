@@ -1,0 +1,22 @@
+name: angel_angular2
+description: Static server middleware for Angel.
+environment:
+  sdk: ">=1.22.0 <2.0.0"
+homepage: https://github.com/angel-dart/angel_static
+author: thosakwe <thosakwe@gmail.com>
+version: 0.0.0
+dependencies:
+  angel_client: ^1.0.0
+  angel_validate: ^1.0.0
+  angular2: ^3.0.0
+dev_dependencies:
+  angular_test: ^1.0.0-beta
+  dart_to_js_script_rewriter: ^1.0.0
+  test: ^0.12.0
+transformers:
+  - angular2/transform/reflection_remover:
+      $include: []
+dev_transformers:
+  - dart_to_js_script_rewriter
+  - test/pub_serve:
+      $include: test/**_test.dart
